@@ -1,3 +1,6 @@
+from numbers import Number
+
+
 with open("Day 1 - Sonar Sweep/input.txt", 'r') as f:
     depths = []
     for line in f:
@@ -7,8 +10,8 @@ with open("Day 1 - Sonar Sweep/input.txt", 'r') as f:
 #######################################################
 # Part 1
 
-def calculate_increases(arr: list[int]):
-    """Calculate how many times in an array an element increases with respect to the previous element.
+def calculate_increases(arr: list[Number]):
+    """Calculates how many times in an array an element increases with respect to the previous element.
 
     Args:
         arr: Array of numbers.
@@ -35,7 +38,17 @@ print(f"Number of measurements larger than the previous measurement: {calculate_
 #######################################################
 # Part 2
 
-def create_sliding_windows(arr, size_window):
+def create_sliding_windows(arr: list[Number], size_window: int):
+    """Creates an array of the sums of sliding windows.
+
+    Args:
+        arr: Array of numbers.
+        size_window: Size of the window.
+
+    Returns:
+        Slided windowed array.
+
+    """
     arr_windowed = []
     for i in range(len(arr) - size_window + 1):
         arr_windowed.append(sum(arr[i:i + size_window]))
