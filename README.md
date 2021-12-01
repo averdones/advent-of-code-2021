@@ -1,0 +1,1 @@
+Solutions to the Advent of Code of 2021 in python 3.10.
